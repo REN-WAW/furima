@@ -1,0 +1,18 @@
+.header {
+    background-color: black;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1120px;
+    align-items: center;
+}
+
+.header__search {
+    width: 100%;
+    height: 45px;
+    margin: 30px,30px;
+    border-radius: 25px;
+}
