@@ -1,18 +1,54 @@
-.header {
+.body{
+    width: 100%;
+}
+
+.header{
     background-color: black;
+    width: 100%;
+    margin: auto;
 }
 
 .header__inner {
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    max-width: 1120px;
     align-items: center;
+    margin: auto;
+    padding: 0px 20px;
 }
 
-.header__search {
-    width: 100%;
-    height: 45px;
-    margin: 30px,30px;
-    border-radius: 25px;
+.header__search .keyword {
+    width: 400px;
+    height: 60px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+
+.header__list-item {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header__list-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.header__form-listing {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.hidden-form{
+    display:none;
 }
