@@ -15,12 +15,14 @@ class CreateLikesTable extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('product_id');
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
+            $table->string('visitor_token', 64)->nullable();
             $table->timestamps();
+            $table->unique(['product_id','user_id']);
+            $table->unique(['product_id','visitor_token']);
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -30,4 +32,4 @@ class CreateLikesTable extends Migration
     {
         Schema::dropIfExists('likes');
     }
-}
+};

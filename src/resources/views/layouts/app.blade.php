@@ -17,33 +17,41 @@
             <h1 class="header__logo">
                 <img src="{{ asset('/images/logo.svg') }}" alt="ロゴ" class="img-header-logo" />
             </h1>
-            <form action="{{ route('index') }}" method="GET">
-                @csrf
-                <input type="text" name="keyword" class="keyword" placeholder="何をお探しですか？">
-            </form>
+            @yield('logo')
             
-            <nav class="header__nav">
+            <div class="header__search">
+                @if (Auth::check())
+                <form action="{{ route('index') }}" method="GET">
+                    <input type="text" name="keyword" class="keyword" placeholder="なにをお探しですか？">
+                </form>
+                @endif
+            </div>
+
+            <div class="header__nav">
+                @if(Auth::check())
                 <ul class="heder__list">
                     <li class="header__list-item">
-                        <form action="/logout" class="header__form" method="post">
+                        <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            ログアウト
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="post" class="hidden-form">
                             @csrf
-                            <a href="logout" type="submit">ログアウト</a>
                         </form>
                     </li>
+                    
                     <li class="header__list-item">
                         <form action="/?tab=mylist" class="header__form" method="get">
-                            @csrf
-                            <a href="/?tab=mylist" type="submit">マイページ</a>
+                            <a href="/mypage" type="submit">マイページ</a>
                         </form>
                     </li>
                     <li class="header__list-item">
-                        <form action="/sell" class="header__form" method="post">
-                            @csrf
-                            <button class="header__form--listing" type="submit">出品</button>
+                        <form action="/sell" class="header__form" method="get">
+                            <button class="header__form-listing" type="submit">出品</button>
                         </form>
                     </li>
                 </ul>
-            </nav>
+                @endif
+            </div>
         </div>
     </header>
 
