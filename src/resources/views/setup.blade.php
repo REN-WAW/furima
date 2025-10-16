@@ -17,8 +17,8 @@
     
     <div class="form__profile">
       <div class="form__icon-image">
-        <img id="current-image" src="{{ $user->icon_image ? asset($user->icon_image) : asset('images/placeholder-user.png') }}">
-        <input type="file" name="icon_image" id="image" class="form-control-file mt-2" style="display: none;">
+        <img id="current-image" src="{{ $user->icon_image ? asset($user->icon_image) : asset('images/placeholder-user.png') }}" class="icon_image">
+        <input type="file" name="image" id="image" class="form-control-file mt-2" style="display: none;">
         <label for='image' class="button-image">
           画像を選択
         </label>
@@ -33,7 +33,7 @@
         <span class="form__label-item">ユーザー名</span>
         <div class="form__group-content">
           <div class="form__input-text">
-            <input type="text" name="name" value="{{ old('name', $user->name) }}" />
+            <input type="text" name="name" class="input" value="{{ old('name', $user->name) }}" />
           </div>
           <div class="form__error">
             @error('name')
@@ -48,7 +48,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="postcode" value="{{ old('postcode', $user->postcode) }}" />
+          <input type="text" name="postcode" class="input" value="{{ old('postcode', $user->postcode) }}" />
         </div>
         <div class="form__error">
           @error('postcode')
@@ -62,7 +62,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="address" value="{{ old('address',$user->address) }}" />
+          <input type="text" name="address" class="input" value="{{ old('address',$user->address) }}" />
         </div>
         <div class="form__error">
           @error('address')
@@ -76,7 +76,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="building" value="{{ old('building', $user->building) }}" />
+          <input type="text" name="building" class="input" value="{{ old('building', $user->building) }}" />
         </div>
         <div class="form__error">
           @error('building')

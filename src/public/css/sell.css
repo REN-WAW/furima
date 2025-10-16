@@ -1,0 +1,102 @@
+.sell__form{
+    text-align: center;
+    margin: 50px 300px;
+}
+
+.sell__form-heading{
+    font-size: 30px;
+}
+
+.sell__form-content{
+    text-align: left;
+}
+
+.label{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sell__product-image {
+    padding: 50px;
+    height: 200px;
+    text-align: center;
+    color: red;
+    border: solid 1px black;
+}
+
+.button-image {
+    color: red;
+    border: solid;
+    padding: 10px;
+}
+
+.product-detail {
+    border-bottom: solid;
+}
+
+.category {
+    margin-top: 30px;
+}
+
+.category-btn {
+    border-radius: 50px;
+    padding: 0 10px;
+    margin: 20px;
+    color: red;
+    border: solid;
+    background-color: white;
+}
+
+.category-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.category-btn button:checked{
+    background-color: red;
+}
+
+.sell__condition{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 30px;
+}
+
+.text{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 50px;
+}
+
+.description{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 50px;
+}
+
+.price-input{
+    position: relative;
+}
+
+.yen{
+    position: absolute;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.price{
+    font-size: 25px;
+    padding-left: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.sell-button{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 25px;
+}
+

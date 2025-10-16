@@ -23,12 +23,12 @@
                 </label>
             </div>
             
-            <h2>商品の詳細</h2>
+            <h2 class="product-detail">商品の詳細</h2>
             
             <label class="label">カテゴリー</label>
             <div class="category">
                 @foreach($categories as $category)
-                <button type="button" class="category-btn" data-id="{{ $category->id }}">
+                <button type="button" class="category-btn" data-id="{{ $category->id }}" name="category-btn">
                     {{ $category->name }}
                 </button>
                 @endforeach
@@ -45,25 +45,25 @@
                 </select>
             </div>
 
-            <h2>商品名と説明</h2>
+            <h1 class="product-detail">商品名と説明</h1>
 
-            <label class="label">商品名</label>
-            <input type="text" name="title" value="{{ old('title') }}">
+            <div class="label">商品名</div>
+            <input type="text" name="title" class="text"value="{{ old('title') }}">
 
-            <label class="label">ブランド名</label>
-            <input type="text" name="brand" value="{{ old('brand') }}">
+            <div class="label">ブランド名</div>
+            <input type="text" name="brand" value="{{ old('brand') }}" class="text">
 
-            <label class="label">商品の説明</label>
-            <textarea name="description">{{ old('description') }}</textarea>
+            <div class="label">商品の説明</div>
+            <textarea name="description" class="description">{{ old('description') }}</textarea>
 
-            <label class="label">販売価格</label>
+            <div class="label">販売価格</div>
             <div class="price-input">
                 <span class="yen">¥</span>
-                <input type="number" name="price" value="{{ old('price') }}">
+                <input type="number" name="price" value="{{ old('price') }}" class="price">
             </div>
         </div>
 
-        <button type="submit">出品する</button>
+        <button type="submit" class="sell-button">出品する</button>
     </form>
 </div>
 @endsection

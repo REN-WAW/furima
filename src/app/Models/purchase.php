@@ -20,7 +20,6 @@ class Purchase extends Model
         return $this->belongsTo(User::class, 'buyer_id');
     }
 
-    // カラム名に合わせて第二引数を 'item_id' or 'product_id' に
     public function product()
     {
         return $this->belongsTo(Product::class, 'product_id');
