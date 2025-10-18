@@ -31,7 +31,9 @@
     @foreach ($products as $product)
     <div class="product-content">
         <a href="{{ route('item.show', $product->id) }}" class="product-link">
-            <img src="{{ asset(str_replace('storage/app/public/', 'storage/', $product->image_path)) }}" alt="{{ $product->title }}" class="img-content" />
+            <img src="{{ Storage::url($product->image_path) }}" alt="{{ $product->title }}" class="img-content" />
+
+            {{-- <img src="{{ asset(str_replace('storage/app/public/', 'storage/', $product->image_path)) }}" alt="{{ $product->title }}" class="img-content" /> --}}
             <div class="detail-content">
                 <p>{{ $product->title }}</p>
             </div>

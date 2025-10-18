@@ -13,7 +13,7 @@ class PurchaseController extends Controller
     {
         $user = Auth::user();
         
-        if(!$user) {
+        if(!$user){
             return redirect('/login')->with('error','購入にはログインが必要です。');
         }
         return view('purchase', compact('item', 'user'));
