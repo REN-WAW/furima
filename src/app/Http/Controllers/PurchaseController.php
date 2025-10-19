@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Purchase;
 use Illuminate\Http\Request;
+use App\Http\Requests\PurchaseRequest;
 use Illuminate\Support\Facades\Auth;
 
 class PurchaseController extends Controller
@@ -18,9 +19,10 @@ class PurchaseController extends Controller
         }
         return view('purchase', compact('item', 'user'));
     }
-    public function store(Request $request, Product $item)
+    public function store(PurchaseRequest $request, Product $item)
     {
         $product = Product::findOrFail($item_id);
+        $payment = $request->validated('payment');
         $product->sold = true;
         $product->save();
 

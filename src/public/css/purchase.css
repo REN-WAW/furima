@@ -111,3 +111,7 @@
     border: none;
 }
 
+.form__error{
+    color: red;
+}
+

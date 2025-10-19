@@ -21,6 +21,11 @@
                 <label for='image' class="button-image">
                     画像を選択する
                 </label>
+                <div class="form__error">
+                    @error('product_image')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
             
             <h2 class="product-detail">商品の詳細</h2>
@@ -32,6 +37,11 @@
                     {{ $category->name }}
                 </button>
                 @endforeach
+                <div class="form__error">
+                    @error('product_category')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
 
             <label class="label">商品の状態</label>
@@ -43,23 +53,49 @@
                     <option value="3">やや傷や汚れあり</option>
                     <option value="4">状態が悪い</option>
                 </select>
+                <div class="form__error">
+                    @error('product_condition')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
 
             <h1 class="product-detail">商品名と説明</h1>
-
             <div class="label">商品名</div>
-            <input type="text" name="title" class="text"value="{{ old('title') }}">
+                <div class="product-title">
+                    <input type="text" name="title" class="text"value="{{ old('title') }}">
+                    <div class="form__error">
+                        @error('product_category')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                </div>
 
             <div class="label">ブランド名</div>
             <input type="text" name="brand" value="{{ old('brand') }}" class="text">
+            <div class="form__error">
+                @error('product_category')
+                {{ $message }}
+                @enderror
+            </div>
 
             <div class="label">商品の説明</div>
             <textarea name="description" class="description">{{ old('description') }}</textarea>
+            <div class="form__error">
+                @error('product_category')
+                {{ $message }}
+                @enderror
+            </div>
 
             <div class="label">販売価格</div>
             <div class="price-input">
                 <span class="yen">¥</span>
                 <input type="number" name="price" value="{{ old('price') }}" class="price">
+                <div class="form__error">
+                    @error('product_category')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
         </div>
 

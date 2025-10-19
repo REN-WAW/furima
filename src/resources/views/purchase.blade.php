@@ -24,6 +24,11 @@
                     <option value="1">コンビニ払い</option>
                     <option value="2">カード支払い</option>
                 </select>
+                <div class="form__error">
+                    @error('payment')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
             
             <div class="purchase__address">
